@@ -1,0 +1,30 @@
+<div class="divItemCenter">
+    <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+        <mat-card class="box">
+            <mat-card-header>
+                <mat-card-title>Sign Up</mat-card-title>
+            </mat-card-header>
+            <form class="example-form" [formGroup]="formUserRegister">
+                <mat-card-content>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Username" formControlName="username">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Password" formControlName="password">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Role" formControlName="role">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Name" formControlName="name">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Lastname" formControlName="lname">
+                    </mat-form-field>
+                </mat-card-content>
+                <button mat-stroked-button color="accent" class="btn-block" (click)="onSubmit()">Sign Up</button>
+            </form>
+            <p class="titleRegister">Already registered <a [routerLink]="['/login']">Sing in</a></p>
+        </mat-card>
+    </div>
+</div>

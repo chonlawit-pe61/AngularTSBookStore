@@ -17,10 +17,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatOptionModule } from '@angular/material/core';
-import { LoginComponent } from './login/login.component';
-import { HomePageComponent } from './home-page/home-page.component';
+import { LoginComponent } from './user/login/login.component';
+import { RegisterComponent } from './user/register/register.component';
+import { HomepageComponent } from './user/homepage/homepage.component';
+
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomePageComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    HomepageComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -1,13 +1,14 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { DataUser } from '../interfaces/interface';
+import { DataUser } from 'src/app/interfaces/interface';
+
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css'],
+  selector: 'app-homepage',
+  templateUrl: './homepage.component.html',
+  styleUrls: ['./homepage.component.css'],
 })
-export class HomePageComponent {
+export class HomepageComponent {
   private token = localStorage.getItem('Token');
   private path: string = 'https://localhost:7045/api/User/GetMe';
   public user: DataUser;

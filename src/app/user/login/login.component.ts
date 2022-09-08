@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { UserToken } from '../interfaces/interface';
+import { UserToken } from '../../interfaces/interface';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
@@ -19,10 +19,10 @@ export class LoginComponent implements OnInit {
   });
   onSubmit(): void {
     //same get Data fromUserLogin.Value
-    // const { username, password } = this.formUserLogin.value;
+    const { username, password } = this.formUserLogin.value;
     const obj = {
-      username: this.formUserLogin.value.username,
-      password: this.formUserLogin.value.password,
+      username: username,
+      password: password,
     };
     this.http
       .post<UserToken>('https://localhost:7045/api/User/Login', obj)
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
         this.CheckToken = res.token;
         localStorage.setItem('Token', res.token);
         console.log(res);
-        this.router.navigate(['/HomePage']);
+        this.router.navigate(['/user/HomePage']);
       });
   }
 }
